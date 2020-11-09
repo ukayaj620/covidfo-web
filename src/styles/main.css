@@ -1,0 +1,9 @@
+@tailwind base;
+
+* {
+  @apply box-border;
+}
+
+@tailwind components;
+
+@tailwind utilities;
