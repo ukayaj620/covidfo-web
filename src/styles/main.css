@@ -10,4 +10,12 @@ a.nav-drawer {
 
 @tailwind components;
 
+.nav-drawer-container {
+  @apply flex flex-col p-4 absolute transition duration-200 bg-gray-100 left-0 top-0 transform h-screen w-64 z-20;
+}
+
+.navbar {
+  @apply flex bg-white items-center justify-between sticky top-0 z-10
+}
+
 @tailwind utilities;

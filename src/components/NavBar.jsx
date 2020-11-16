@@ -12,8 +12,7 @@ const Drawer = ({ open, close }) => {
   return (
     <div className="absolute left-0 top-0">
       <div 
-        className={`flex flex-col p-4 lg:hidden absolute transition duration-200 bg-gray-100 
-          left-0 top-0 transform h-screen w-64 z-20 ${open ? 'translate-x-0' : '-translate-x-full'}`} 
+        className={`lg:hidden nav-drawer-container ${open ? 'translate-x-0' : '-translate-x-full'}`} 
       >
         <div onClick={close} className="self-end mb-4">
           <img
@@ -56,7 +55,7 @@ const NavBar = () => {
 
   return (
     <nav 
-      className="flex flex-row bg-white lg:flex-row-reverse items-center justify-between p-4 lg:px-8 sticky top-0 z-10"
+      className="flex-row lg:flex-row-reverse p-4 lg:px-8 navbar"
       style={{ boxShadow: `0 ${_height/200 * 4}px ${_height/200 * 16}px rgba(0, 0, 0, 0.06)` }}
     >
       <Drawer open={_drawerOpen} close={_closeDrawer} />
