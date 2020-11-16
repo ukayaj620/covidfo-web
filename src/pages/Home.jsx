@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
+import Loader from 'react-loader-spinner'
+import * as World from '../api/worlds.api';
 import image from '../helpers/ImageLoader';
+import NavBar from '../components/NavBar';
 
 const HomeBanner = () => {
   const _history = useHistory();
@@ -30,13 +33,42 @@ const HomeBanner = () => {
       />
     </div>
   );
+};
+
+const HomeWorldCases = ({ worldData }) => {
+  return (
+    <div>
+     {worldData.cases}
+    </div>
+  );
 }
 
 const Home = () => {
+  const [_isLoading, _setIsLoading] = useState(true);
+  const [_worldData, _setWorldData] = useState({});
 
-  return (
-    <div className="flex flex-col w-full items-start justify-center">
-      <HomeBanner />
+  useEffect(() => {
+    const bootstrapAsync = async () => {
+      const response = await World.getWorldBasicInfo();
+      if (response.status === 200) {
+        _setWorldData(response.data);
+        _setIsLoading(false);
+      } 
+    }
+    bootstrapAsync().then();
+  }, []);
+
+  return !_isLoading ? (
+    <div>
+      <NavBar />
+      <div className="flex flex-col w-full items-start justify-center">
+        <HomeBanner />
+        <HomeWorldCases worldData={_worldData} />
+      </div>
+    </div>
+  ) : (
+    <div className="absolute top-0 left-0 w-screen h-screen flex justify-center items-center bg-dark">
+      <Loader type="Circles" color="#00BFFF" height={80} width={80} />
     </div>
   );
 };
