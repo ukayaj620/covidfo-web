@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { NavLink, useHistory, useLocation } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import image from '../helpers/ImageLoader';
 import useScrollHeight from '../hooks/useScrollHeight';
 
@@ -12,7 +12,7 @@ const Drawer = ({ open, close }) => {
   return (
     <div className="absolute left-0 top-0">
       <div 
-        className={`lg:hidden nav-drawer-container ${open ? 'translate-x-0' : '-translate-x-full'}`} 
+        className={`lg:hidden nav-drawer-container bg-accent ${open ? 'translate-x-0' : '-translate-x-full'}`} 
       >
         <div onClick={close} className="self-end mb-4">
           <img
@@ -55,7 +55,7 @@ const NavBar = () => {
 
   return (
     <nav 
-      className="flex-row lg:flex-row-reverse p-4 lg:px-8 navbar"
+      className="flex-row lg:flex-row-reverse p-4 lg:px-8 navbar bg-accent"
       style={{ boxShadow: `0 ${_height/200 * 4}px ${_height/200 * 16}px rgba(0, 0, 0, 0.06)` }}
     >
       <Drawer open={_drawerOpen} close={_closeDrawer} />
@@ -71,7 +71,7 @@ const NavBar = () => {
           <NavLink 
             key={`#drawer-link-${label}-${index}`}
             className={`
-              nav-drawer mx-2
+              nav-drawer mx-4
             `}
             to={path}
             activeClassName='active'
@@ -83,7 +83,7 @@ const NavBar = () => {
       </div>
       <a href="/">
         <img
-          className="w-48 lg:w-56"
+          className="w-40 lg:w-64"
           src={image.load("brand.logo")}
           alt="This is Codenitiva"
         />
@@ -102,8 +102,8 @@ const menuItemsLabel = [
     path: '/map',
   },
   {
-    label: 'Info',
-    path: '/info'
+    label: 'Education',
+    path: '/edu'
   },
 ];
 
