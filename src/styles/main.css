@@ -4,6 +4,10 @@
   @apply box-border;
 }
 
+a.nav-drawer {
+  @apply transition duration-200 text-dark font-header font-bold text-lg;
+}
+
 @tailwind components;
 
 @tailwind utilities;
