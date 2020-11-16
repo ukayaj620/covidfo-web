@@ -9,7 +9,7 @@ a.nav-drawer {
 }
 
 h1 {
-  @apply font-header text-4xl font-bold
+  @apply font-header text-4xl font-bold;
 }
 
 h1.dark {
@@ -21,7 +21,7 @@ h1.red {
 }
 
 h4 {
-  @apply text-white font-header font-semibold text-xl
+  @apply text-white font-header font-semibold text-xl;
 }
 
 h5 {
@@ -49,11 +49,11 @@ h5 {
 }
 
 .navbar {
-  @apply flex bg-white items-center justify-between sticky top-0 z-10
+  @apply flex bg-white items-center justify-between sticky top-0 z-10;
 }
 
 .btn {
-  @apply px-6 py-3 bg-dark border-0 rounded-xl shadow-lg transform transition duration-300
+  @apply px-6 py-3 bg-dark border-0 rounded-xl shadow-lg transform transition duration-300;
 }
 
 .btn:hover {

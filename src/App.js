@@ -3,7 +3,6 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Helmet } from "react-helmet";
 import Home from './pages/Home';
 import Education from './pages/Education';
-import NavBar from './components/NavBar';
 
 const App = () => {
   return (
@@ -12,7 +11,6 @@ const App = () => {
         <meta name="description" content="Covidfo is COVID-19 Information Tracker Application" />
       </Helmet>
       <BrowserRouter>
-      <NavBar />
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/edu" component={Education} />
