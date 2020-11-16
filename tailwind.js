@@ -16,7 +16,10 @@ module.exports = {
         primary: '#073BC8',
         dark: '#00144C',
         muted: '#979797',
-        accent: '#FAFAFA'
+        accent: '#FAFAFA',
+        danger: '#E90505',
+        caution: '#FAC300',
+        safe: '#22EF00',
       },
       spacing: {
         '72': '18rem',
@@ -27,6 +30,7 @@ module.exports = {
         '112': '28rem',
       },
       fontSize: {
+        '305xl': '2rem',
         '7xl': '5rem',
         '8xl': '6rem',
       }
