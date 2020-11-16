@@ -4,6 +4,8 @@ import * as World from '../api/worlds.api';
 import image from '../helpers/ImageLoader';
 import NavBar from '../components/NavBar';
 import Loading from '../components/Loading';
+import CovidCard from '../components/CovidCard';
+import { parseNumber } from '../helpers/Functions';
 
 const HomeBanner = () => {
   const _history = useHistory();
@@ -36,9 +38,50 @@ const HomeBanner = () => {
 };
 
 const HomeWorldCases = ({ worldData }) => {
+
+  const WorldCasesData = [
+    {
+      label: 'KONFIRMASI',
+      color: 'primary',
+      today: `+${parseNumber(worldData.todayCases)}`,
+      accumulate: worldData.cases,
+      icon: 'confirm',
+    },
+    {
+      label: 'AKTIF',
+      color: 'caution',
+      today: `${(worldData.active / worldData.cases).toFixed(4) * 100} %`,
+      accumulate: worldData.active,
+      icon: 'aid',
+    },
+    {
+      label: 'SEMBUH',
+      color: 'safe',
+      today: `+${parseNumber(worldData.todayRecovered)}`,
+      accumulate: worldData.recovered,
+      icon: 'healthy',
+    },
+    {
+      label: 'MENINGGAL',
+      color: 'danger',
+      today: `+${parseNumber(worldData.todayDeaths)}`,
+      accumulate: worldData.deaths,
+      icon: 'dead',
+    }
+  ];
+
   return (
-    <div>
-     {worldData.cases}
+    <div className="w-full flex flex-col lg:flex-row px-4 mt-8 items-center">
+      {WorldCasesData.map(({ label, today, accumulate, color, icon }, index) => (
+        <CovidCard
+          key={`#covid-card-${index}-${label}`}
+          accumulate={accumulate} 
+          today={today} 
+          label={label} 
+          color={color}
+          icon={icon}
+        />
+      ))}
     </div>
   );
 }
@@ -59,7 +102,7 @@ const Home = () => {
   }, []);
 
   return !_isLoading ? (
-    <div>
+    <div className="bg-accent">
       <NavBar />
       <div className="flex flex-col w-full items-start justify-center">
         <HomeBanner />
