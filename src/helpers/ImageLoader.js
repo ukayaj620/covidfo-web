@@ -9,6 +9,8 @@ export default {
         return require('../assets/icons/menu.svg').default;
       case 'cross':
         return require('../assets/icons/x.svg').default;
+      case 'war':
+        return require('../assets/desinfectant.svg').default;
       default:
         return require('../assets/icons/covidfo-icon.svg').default;
     }
