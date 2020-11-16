@@ -8,6 +8,40 @@ a.nav-drawer {
   @apply transition duration-200 text-dark font-header font-bold text-lg;
 }
 
+h1 {
+  @apply font-header text-4xl font-bold
+}
+
+h1.dark {
+  @apply text-dark;
+}
+
+h1.red {
+  @apply text-red-700;
+}
+
+h4 {
+  @apply text-white font-header font-semibold text-xl
+}
+
+h5 {
+  @apply text-dark font-content text-base;
+}
+
+@screen lg {
+  h1 {
+    @apply text-6xl;
+  }
+
+  h4 {
+    @apply text-2xl;
+  }
+
+  h5 {
+    @apply text-xl;
+  }
+}
+
 @tailwind components;
 
 .nav-drawer-container {
@@ -16,6 +50,14 @@ a.nav-drawer {
 
 .navbar {
   @apply flex bg-white items-center justify-between sticky top-0 z-10
+}
+
+.btn {
+  @apply px-6 py-3 bg-dark border-0 rounded-xl shadow-lg transform transition duration-300
+}
+
+.btn:hover {
+  @apply shadow-2xl scale-105;
 }
 
 @tailwind utilities;
