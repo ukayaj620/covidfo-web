@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import Loader from 'react-loader-spinner'
 import * as World from '../api/worlds.api';
 import image from '../helpers/ImageLoader';
 import NavBar from '../components/NavBar';
+import Loading from '../components/Loading';
 
 const HomeBanner = () => {
   const _history = useHistory();
@@ -67,9 +67,7 @@ const Home = () => {
       </div>
     </div>
   ) : (
-    <div className="absolute top-0 left-0 w-screen h-screen flex justify-center items-center bg-dark">
-      <Loader type="Circles" color="#00BFFF" height={80} width={80} />
-    </div>
+    <Loading />
   );
 };
 
