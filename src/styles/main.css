@@ -12,6 +12,14 @@ a.active {
   @apply text-primary;
 }
 
+a.news {
+  @apply font-header text-sm font-semibold;
+}
+
+a.news:hover {
+  @apply underline text-primary;
+}
+
 h1 {
   @apply font-header text-4xl font-bold;
 }
@@ -44,6 +52,10 @@ h5 {
   @apply text-dark font-content text-base;
 }
 
+h6 {
+  @apply text-dark font-content font-semibold text-xs;
+}
+
 @screen lg {
   h1 {
     @apply text-6xl;
@@ -59,6 +71,14 @@ h5 {
 
   h5 {
     @apply text-xl;
+  }
+
+  h6 {
+    @apply text-sm;
+  }
+
+  a.news {
+    @apply text-base;
   }
 }
 
@@ -78,6 +98,32 @@ h5 {
 
 .btn:hover {
   @apply shadow-2xl scale-105;
+}
+
+.covid-cards {
+  @apply flex w-4/5 flex-row items-center justify-between px-4 py-2 m-4 rounded-xl shadow-lg transform duration-300;
+}
+
+.covid-cards:hover {
+  @apply shadow-2xl scale-105;
+}
+
+.news-cards {
+  @apply w-4/5 flex flex-col justify-between items-center m-4 rounded-xl shadow-xl transform transition duration-300 bg-white;
+}
+
+.news-cards:hover {
+  @apply scale-105 shadow-2xl;
+}
+
+@screen lg {
+  .covid-cards {
+    @apply w-1/4
+  }
+
+  .news-cards {
+    @apply w-1/4;
+  }
 }
 
 @tailwind utilities;
