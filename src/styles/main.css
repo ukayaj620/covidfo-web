@@ -80,4 +80,18 @@ h5 {
   @apply shadow-2xl scale-105;
 }
 
+.covid-cards {
+  @apply flex w-3/4 flex-row items-center justify-between px-4 py-2 m-4 rounded-xl shadow-lg transform duration-300;
+}
+
+.covid-cards:hover {
+  @apply shadow-2xl scale-105;
+}
+
+@screen lg {
+  .covid-cards {
+    @apply w-1/4
+  }
+}
+
 @tailwind utilities;
