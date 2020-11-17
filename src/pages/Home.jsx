@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import * as World from '../api/worlds.api';
+import * as News from '../api/news.api';
 import image from '../helpers/ImageLoader';
 import NavBar from '../components/NavBar';
 import Loading from '../components/Loading';
-import CovidCard from '../components/CovidCard';
+import CovidCard from '../components/Card/CovidCard';
 import { parseNumber } from '../helpers/Functions';
 import Separator from '../components/Separator';
+import NewsCard from '../components/Card/NewsCard';
 
 const HomeBanner = () => {
   const _history = useHistory();
@@ -72,11 +74,10 @@ const HomeWorldCases = ({ worldData }) => {
   ];
 
   return (
-    <div className="w-full flex flex-col items-center justify-center">
-      <Separator />
-      <h2 className="dark">Kasus COVID-19 Dunia Terkini</h2>
+    <div className="w-full flex flex-col items-center justify-center px-4">
+      <h2 className="dark text-center">Kasus COVID-19 Dunia Terkini</h2>
       <h4 className="dark text-center">Update Terakhir: {(new Date(worldData.updated)).toString()}</h4>
-      <div className="w-full flex flex-col lg:flex-row px-4 items-center mt-8">
+      <div className="w-full flex flex-col lg:flex-row items-center mt-8">
         {WorldCasesData.map(({ label, today, accumulate, color, icon }, index) => (
           <CovidCard
             key={`#covid-card-${index}-${label}`}
@@ -88,32 +89,54 @@ const HomeWorldCases = ({ worldData }) => {
           />
         ))}
       </div>
-      <Separator />
     </div>
   );
-}
+};
+
+const HomeNewsCases = ({ newsData }) => {
+  return (
+    <div className="w-full flex flex-col items-center px-4 justify-center">
+      <h2 className="dark text-center">Berita COVID-19 Indonesia Terkini</h2>
+      <div className="w-full flex flex-col lg:flex-row items-center mt-8">
+        {newsData.filter(news => news.urlToImage).slice(0, 4).map((news, index) => (
+          <NewsCard 
+            urlToImage={news.urlToImage}
+            source={news.source.name}
+            title={news.title}
+            url={news.url}
+            publishedAt={(new Date(news.publishedAt)).toDateString()}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
 
 const Home = () => {
   const [_isLoading, _setIsLoading] = useState(true);
   const [_worldData, _setWorldData] = useState({});
+  const [_newsData, _setNewsData] = useState([]);
 
   useEffect(() => {
     const bootstrapAsync = async () => {
-      const response = await World.getWorldBasicInfo();
-      if (response.status === 200) {
-        _setWorldData(response.data);
-        _setIsLoading(false);
-      } 
+      const responseWorldData = await World.getWorldBasicInfo();
+      const responseNewsData = await News.getLatestHealthInfo();
+      _setWorldData(responseWorldData.data); 
+      _setNewsData(responseNewsData.data.articles);
     }
-    bootstrapAsync().then();
+    bootstrapAsync().then(() => _setIsLoading(false));
   }, []);
 
   return !_isLoading ? (
     <div className="bg-accent">
       <NavBar />
-      <div className="flex flex-col w-full items-start justify-center">
+      <div className="flex flex-col w-full items-center justify-center">
         <HomeBanner />
+        <Separator />
         <HomeWorldCases worldData={_worldData} />
+        <Separator />
+        <HomeNewsCases newsData={_newsData} />
+        <Separator />
       </div>
     </div>
   ) : (

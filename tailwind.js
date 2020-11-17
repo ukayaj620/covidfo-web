@@ -22,6 +22,7 @@ module.exports = {
         safe: '#22EF00',
       },
       spacing: {
+        '44': '11rem',
         '72': '18rem',
         '80': '20rem',
         '88': '22rem',

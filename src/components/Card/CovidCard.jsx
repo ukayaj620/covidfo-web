@@ -1,6 +1,6 @@
 import React from 'react';
-import image from '../helpers/ImageLoader';
-import { parseNumber } from '../helpers/Functions';
+import image from '../../helpers/ImageLoader';
+import { parseNumber } from '../../helpers/Functions';
 
 const CovidCard = ({ label, accumulate, today, color, icon }) => {
 
