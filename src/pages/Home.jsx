@@ -98,7 +98,7 @@ const HomeNewsCases = ({ newsData }) => {
     <div className="w-full flex flex-col items-center px-4 justify-center">
       <h2 className="dark text-center">Berita COVID-19 Indonesia Terkini</h2>
       <div className="w-full flex flex-col lg:flex-row items-center mt-8">
-        {newsData.slice(0, 4).map((news, index) => (
+        {newsData.filter(news => news.urlToImage).slice(0, 4).map((news, index) => (
           <NewsCard 
             urlToImage={news.urlToImage}
             source={news.source.name}
