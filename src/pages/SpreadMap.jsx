@@ -1,7 +1,7 @@
 import React from 'react';
 import NavBar from '../components/NavBar';
 
-const Education = () => {
+const SpreadMap = () => {
   return (
     <div>
       <NavBar />
@@ -9,4 +9,4 @@ const Education = () => {
   );
 };
 
-export default Education;
+export default SpreadMap;
