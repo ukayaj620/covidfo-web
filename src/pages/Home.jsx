@@ -75,7 +75,7 @@ const HomeWorldCases = ({ worldData }) => {
     <div className="w-full flex flex-col items-center justify-center">
       <Separator />
       <h2 className="dark">Kasus COVID-19 Dunia Terkini</h2>
-      <h4 className="dark">Update Terakhir: {(new Date(worldData.updated)).toString()}</h4>
+      <h4 className="dark text-center">Update Terakhir: {(new Date(worldData.updated)).toString()}</h4>
       <div className="w-full flex flex-col lg:flex-row px-4 items-center mt-8">
         {WorldCasesData.map(({ label, today, accumulate, color, icon }, index) => (
           <CovidCard
