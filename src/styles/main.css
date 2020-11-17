@@ -20,8 +20,20 @@ h1.red {
   @apply text-red-700;
 }
 
+h2 {
+  @apply font-header text-3xl font-bold;
+}
+
+h2.dark {
+  @apply text-dark;
+}
+
 h4 {
   @apply text-white font-header font-semibold text-xl;
+}
+
+h4.dark {
+  @apply text-dark;
 }
 
 h5 {
@@ -31,6 +43,10 @@ h5 {
 @screen lg {
   h1 {
     @apply text-6xl;
+  }
+
+  h2 {
+    @apply text-5xl;
   }
 
   h4 {
