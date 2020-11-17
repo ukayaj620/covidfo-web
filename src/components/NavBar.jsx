@@ -83,7 +83,7 @@ const NavBar = () => {
       </div>
       <a href="/">
         <img
-          className="w-40 lg:w-64"
+          className="w-40 lg:w-56"
           src={image.load("brand.logo")}
           alt="This is Codenitiva"
         />
