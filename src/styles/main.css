@@ -8,6 +8,10 @@ a.nav-drawer {
   @apply transition duration-200 text-dark font-header font-bold text-lg;
 }
 
+a.active {
+  @apply text-primary;
+}
+
 h1 {
   @apply font-header text-4xl font-bold;
 }
@@ -29,7 +33,7 @@ h2.dark {
 }
 
 h4 {
-  @apply text-white font-header font-semibold text-xl;
+  @apply text-white font-header font-semibold text-lg;
 }
 
 h4.dark {

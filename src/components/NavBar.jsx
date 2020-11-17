@@ -94,15 +94,15 @@ const NavBar = () => {
 
 const menuItemsLabel = [
   {
-    label: 'Home',
+    label: 'Beranda',
     path: '/'
   },
   {
-    label: 'Map',
+    label: 'Peta Sebaran',
     path: '/map',
   },
   {
-    label: 'Education',
+    label: 'Edukasi',
     path: '/edu'
   },
 ];

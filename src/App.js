@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Helmet } from "react-helmet";
 import Home from './pages/Home';
 import Education from './pages/Education';
+import SpreadMap from './pages/SpreadMap';
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/edu" component={Education} />
+          <Route path="/map" component={SpreadMap} />
         </Switch>
       </BrowserRouter>
     </div>
