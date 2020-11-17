@@ -6,6 +6,7 @@ import NavBar from '../components/NavBar';
 import Loading from '../components/Loading';
 import CovidCard from '../components/CovidCard';
 import { parseNumber } from '../helpers/Functions';
+import Separator from '../components/Separator';
 
 const HomeBanner = () => {
   const _history = useHistory();
@@ -17,7 +18,7 @@ const HomeBanner = () => {
       <div className="flex flex-col lg:mr-4 w-full lg:w-2/3 items-center lg:items-start justify-between mt-4 pt-4">
         <h1 className="dark leading-snug text-center lg:text-left">
           AYO! Bersama Putuskan Rantai Penyebaran
-          <span className="text-red-700"> COVID-19</span>
+          <span className="text-danger"> COVID-19</span>
         </h1>
         <h5 className="my-4 text-center lg:text-left">
           Tidak pernah lebih jelas bahwa kita semua adalah warga dunia,
@@ -50,7 +51,7 @@ const HomeWorldCases = ({ worldData }) => {
     {
       label: 'AKTIF',
       color: 'caution',
-      today: `${(worldData.active / worldData.cases).toFixed(4) * 100} %`,
+      today: `${((worldData.active / worldData.cases) * 100).toPrecision(4)} %`,
       accumulate: worldData.active,
       icon: 'aid',
     },
@@ -71,17 +72,23 @@ const HomeWorldCases = ({ worldData }) => {
   ];
 
   return (
-    <div className="w-full flex flex-col lg:flex-row px-4 mt-8 items-center">
-      {WorldCasesData.map(({ label, today, accumulate, color, icon }, index) => (
-        <CovidCard
-          key={`#covid-card-${index}-${label}`}
-          accumulate={accumulate} 
-          today={today} 
-          label={label} 
-          color={color}
-          icon={icon}
-        />
-      ))}
+    <div className="w-full flex flex-col items-center justify-center">
+      <Separator />
+      <h2 className="dark">Kasus COVID-19 Dunia Terkini</h2>
+      <h4 className="dark">Update Terakhir: {(new Date(worldData.updated)).toString()}</h4>
+      <div className="w-full flex flex-col lg:flex-row px-4 items-center mt-8">
+        {WorldCasesData.map(({ label, today, accumulate, color, icon }, index) => (
+          <CovidCard
+            key={`#covid-card-${index}-${label}`}
+            accumulate={accumulate} 
+            today={today} 
+            label={label} 
+            color={color}
+            icon={icon}
+          />
+        ))}
+      </div>
+      <Separator />
     </div>
   );
 }
