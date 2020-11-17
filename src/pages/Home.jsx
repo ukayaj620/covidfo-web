@@ -116,6 +116,7 @@ const Home = () => {
   const [_isLoading, _setIsLoading] = useState(true);
   const [_worldData, _setWorldData] = useState({});
   const [_newsData, _setNewsData] = useState([]);
+  const [_class, _setClass] = useState('opacity-0');
 
   useEffect(() => {
     const bootstrapAsync = async () => {
@@ -127,8 +128,15 @@ const Home = () => {
     bootstrapAsync().then(() => _setIsLoading(false));
   }, []);
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      _setClass('transition opacity-100 ease-in-out duration-100')
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, [_isLoading]);
+
   return !_isLoading ? (
-    <div className="bg-accent">
+    <div className={`bg-accent ${_class}`}>
       <NavBar />
       <div className="flex flex-col w-full items-center justify-center">
         <HomeBanner />
