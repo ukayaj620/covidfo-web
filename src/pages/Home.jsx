@@ -9,6 +9,7 @@ import CovidCard from '../components/Card/CovidCard';
 import { parseNumber } from '../helpers/Functions';
 import Separator from '../components/Separator';
 import NewsCard from '../components/Card/NewsCard';
+import FadeIn from '../components/FadeIn';
 
 const HomeBanner = () => {
   const _history = useHistory();
@@ -16,6 +17,7 @@ const HomeBanner = () => {
   const _navigateTo = (path) => _history.push(path);
 
   return (
+    <FadeIn direction="left">
     <div className="flex lg:flex-row flex-col items-start justify-between bg-accent px-8">
       <div className="flex flex-col lg:mr-4 w-full lg:w-2/3 items-center lg:items-start justify-between mt-4 pt-4">
         <h1 className="dark leading-snug text-center lg:text-left">
@@ -37,6 +39,7 @@ const HomeBanner = () => {
         alt="War againts COVID-19"
       />
     </div>
+    </FadeIn>
   );
 };
 
