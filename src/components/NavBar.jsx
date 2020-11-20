@@ -55,7 +55,7 @@ const NavBar = () => {
 
   return (
     <nav 
-      className="flex-row lg:flex-row-reverse p-4 lg:px-8 navbar bg-accent"
+      className="flex-row lg:flex-row-reverse p-4 lg:px-8 lg:py-2 navbar bg-accent"
       style={{ boxShadow: `0 ${_height/200 * 4}px ${_height/200 * 16}px rgba(0, 0, 0, 0.06)` }}
     >
       <Drawer open={_drawerOpen} close={_closeDrawer} />
@@ -85,7 +85,7 @@ const NavBar = () => {
         <img
           className="w-40 lg:w-56"
           src={image.load("brand.logo")}
-          alt="This is Codenitiva"
+          alt="This is Covidfo"
         />
       </a>
     </nav>

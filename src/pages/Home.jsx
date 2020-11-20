@@ -104,7 +104,7 @@ const HomeNewsCases = ({ newsData }) => {
             source={news.source.name}
             title={news.title}
             url={news.url}
-            publishedAt={(new Date(news.publishedAt)).toDateString()}
+            publishedAt={(new Date(news.publishedAt)).toLocaleString()}
           />
         ))}
       </div>
@@ -147,9 +147,7 @@ const Home = () => {
         <Separator />
       </div>
     </div>
-  ) : (
-    <Loading />
-  );
+  ) : <Loading />;
 };
 
 export default Home;

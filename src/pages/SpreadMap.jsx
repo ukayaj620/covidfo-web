@@ -6,14 +6,22 @@ const JHUMap = () => {
   return (
     <div className="w-full flex flex-col items-center mt-8">
       <h2 className="dark text-center">Peta Dunia Penyebaran COVID-19</h2>
-      <div className="mt-8 w-4/5 lg:w-11/12 shadow-2xl rounded-2xl p-4">
-      <iframe className="w-full" height="576px" src="https://app.developer.here.com/coronavirus/" frameborder="0" />
+      <h4 className="dark text-center">Source: Here Maps API</h4>
+      <div className="mt-8 w-4/5 lg:w-3/4 shadow-2xl rounded-2xl p-4">
+      <iframe
+        title="Peta Dunia Penyebaran COVID-19"
+        className="w-full"
+        height="480px" 
+        src="https://app.developer.here.com/coronavirus/"
+        frameborder="0" 
+      />
       </div>
     </div>
   );
 }
 
 const SpreadMap = () => {
+
   return (
     <div className="bg-accent">
       <NavBar />

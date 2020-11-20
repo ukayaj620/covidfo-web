@@ -11,7 +11,7 @@ const CovidCard = ({ label, accumulate, today, color, icon }) => {
         <h4>{label}</h4>
         <h4>{today}</h4>
       </div>
-      <img className="ml-4 w-1/4" src={image.load(icon)} />
+      <img className="ml-4 w-1/4" src={image.load(icon)} alt={label} />
     </div>
   );
 };
