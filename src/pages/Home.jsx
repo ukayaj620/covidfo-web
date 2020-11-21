@@ -24,7 +24,7 @@ const HomeBanner = () => {
             AYO! Bersama Putuskan Rantai Penyebaran
             <span className="text-danger"> COVID-19</span>
           </h1>
-          <h5 className="my-4 text-center lg:text-left">
+          <h5 className="my-4 text-center lg:text-justify">
             Tidak pernah lebih jelas bahwa kita semua adalah warga dunia,
             dan kita semua memiliki peran. Ketegangan novel
             coronavirus, secara resmi telah mencapai proporsi pandemi. 
