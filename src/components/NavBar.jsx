@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
-import image from '../helpers/ImageLoader';
+import load from '../helpers/ImageLoader';
 import useScrollHeight from '../hooks/useScrollHeight';
 
 const Drawer = ({ open, close }) => {
@@ -17,7 +17,7 @@ const Drawer = ({ open, close }) => {
         <div onClick={close} className="self-end mb-4">
           <img
             className="w-6"
-            src={image.load("cross")}
+            src={load("cross")}
             alt="Close"
           />
         </div>
@@ -62,7 +62,7 @@ const NavBar = () => {
       <div onClick={_openDrawer} className="lg:hidden">
         <img
           className="w-8"
-          src={image.load("hamburger")}
+          src={load("hamburger")}
           alt="Menu"
         />
       </div>
@@ -84,7 +84,7 @@ const NavBar = () => {
       <a href="/">
         <img
           className="w-40 lg:w-56"
-          src={image.load("brand.logo")}
+          src={load("brand.logo")}
           alt="This is Covidfo"
         />
       </a>
