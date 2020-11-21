@@ -1,32 +1,36 @@
-export default {
-  load(name) {
-    switch (name) {
-      case 'brand.icon':
-        return require('../assets/icons/covidfo-icon.svg').default;
-      case 'brand.logo':
-        return require('../assets/covidfo.svg').default;
-      case 'hamburger':
-        return require('../assets/icons/menu.svg').default;
-      case 'cross':
-        return require('../assets/icons/x.svg').default;
-      case 'war':
-        return require('../assets/desinfectant.svg').default;
-      case 'confirm':
-        return require('../assets/icons/infected.svg').default;
-      case 'dead':
-        return require('../assets/icons/dead.svg').default;
-      case 'healthy':
-        return require('../assets/icons/healthy.svg').default;
-      case 'aid':
-        return require('../assets/icons/aid.svg').default;
-      case 'social_distancing':
-        return require('../assets/social_distancing.png').default;
-      case 'wash_hand':
-        return require('../assets/wash_hand.png').default;
-      case 'wear_mask':
-        return require('../assets/wear_mask.png').default;
-      default:
-        return require('../assets/icons/covidfo-icon.svg').default;
-    }
+const image = (name) => {
+  switch (name) {
+    case 'brand.icon':
+      return require('../assets/icons/covidfo-icon.svg');
+    case 'brand.logo':
+      return require('../assets/covidfo.svg');
+    case 'hamburger':
+      return require('../assets/icons/menu.svg');
+    case 'cross':
+      return require('../assets/icons/x.svg');
+    case 'war':
+      return require('../assets/desinfectant.svg');
+    case 'confirm':
+      return require('../assets/icons/infected.svg');
+    case 'dead':
+      return require('../assets/icons/dead.svg');
+    case 'healthy':
+      return require('../assets/icons/healthy.svg');
+    case 'aid':
+      return require('../assets/icons/aid.svg');
+    case 'social_distancing':
+      return require('../assets/social_distancing.png');
+    case 'wash_hand':
+      return require('../assets/wash_hand.png');
+    case 'wear_mask':
+      return require('../assets/wear_mask.png');
+    case 'covid19':
+      return require('../assets/covid_19.png');
+    default:
+      return require('../assets/icons/covidfo-icon.svg');
   }
 }
+
+const load = (name) => image(name).default;
+
+export default load;
