@@ -26,6 +26,12 @@ const image = (name) => {
       return require('../assets/wear_mask.png');
     case 'covid19':
       return require('../assets/covid_19.png');
+    case 'dizzy':
+      return require('../assets/dizzy.png');
+    case 'fever':
+      return require('../assets/fever.jpg');
+    case 'cough':
+      return require('../assets/cough.jpg');
     default:
       return require('../assets/icons/covidfo-icon.svg');
   }
