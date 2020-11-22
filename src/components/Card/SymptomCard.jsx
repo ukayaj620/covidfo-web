@@ -12,7 +12,7 @@ const SymptomCard = ({ symptom, description, title }) => {
         />
       </div>
       <div className="flex w-4/5 lg:w-3/5 flex-col items-start rounded-xl shadow-lg p-4">
-        <h4 className="dark text-center">{title}</h4>
+        <h4 className="dark text-center font-bold">{title}</h4>
         <h6 className="font-header text-sm lg:text-base text-justify">{description}</h6>
       </div>
     </div>
