@@ -4,6 +4,7 @@ import load from '../helpers/ImageLoader';
 import FadeIn from '../components/FadeIn';
 import Separator from '../components/Separator';
 import CovidEduCard from '../components/Card/CovidEduCard';
+import Footer from '../components/Footer';
 
 const CovidBanner = () => {
   return (
@@ -123,7 +124,9 @@ const Education = () => {
         <CovidSymptom />
         <Separator />
         <ThreeMStopCovid />
+        <Separator />
       </div>
+      <Footer />
     </div>
   );
 };

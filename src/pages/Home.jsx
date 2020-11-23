@@ -10,6 +10,7 @@ import { parseNumber } from '../helpers/Functions';
 import Separator from '../components/Separator';
 import NewsCard from '../components/Card/NewsCard';
 import FadeIn from '../components/FadeIn';
+import Footer from '../components/Footer';
 
 const HomeBanner = () => {
   const _history = useHistory();
@@ -149,6 +150,7 @@ const Home = () => {
         <HomeNewsCases newsData={_newsData} />
         <Separator />
       </div>
+      <Footer />
     </div>
   ) : <Loading />;
 };
