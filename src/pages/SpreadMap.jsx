@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from '../components/Footer';
 import NavBar from '../components/NavBar';
 import Separator from '../components/Separator';
 
@@ -29,6 +30,7 @@ const SpreadMap = () => {
         <JHUMap />
         <Separator />
       </div>
+      <Footer /> 
     </div>
   );
 };
