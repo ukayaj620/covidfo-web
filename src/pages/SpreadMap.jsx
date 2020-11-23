@@ -3,7 +3,7 @@ import Footer from '../components/Footer';
 import NavBar from '../components/NavBar';
 import Separator from '../components/Separator';
 
-const JHUMap = () => {
+const Map = () => {
   return (
     <div className="w-full flex flex-col items-center mt-8">
       <h2 className="dark text-center">Peta Dunia Penyebaran COVID-19</h2>
@@ -27,7 +27,7 @@ const SpreadMap = () => {
     <div className="bg-accent">
       <NavBar />
       <div className="flex flex-col w-full items-center justify-center">
-        <JHUMap />
+        <Map />
         <Separator />
       </div>
       <Footer /> 
