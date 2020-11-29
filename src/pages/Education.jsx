@@ -47,7 +47,7 @@ const CovidSymptom = () => {
         mengalami kesulitan bernapas atau sesak napas.`
     },
     {
-      title: 'Pening',
+      title: 'Sakit Kepala',
       image: 'dizzy',
       description: `Sekitar 1 dari setiap 6 orang 
         yang mendapatkan COVID-19 sakit parah dan 
