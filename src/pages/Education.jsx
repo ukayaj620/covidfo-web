@@ -5,6 +5,7 @@ import FadeIn from '../components/FadeIn';
 import Separator from '../components/Separator';
 import CovidEduCard from '../components/Card/CovidEduCard';
 import Footer from '../components/Footer';
+import ReactPlayer from 'react-player';
 
 const CovidBanner = () => {
   return (
@@ -114,12 +115,25 @@ const ThreeMStopCovid = () => {
   );
 };
 
+const CovidEduVideo = () => {
+  return (
+    <div className="w-full flex flex-col items-center justify-center px-4">
+      <h2 className="dark text-center">Marilah Mendalami Tentang COVID-19</h2>
+      <div className="dark p-4 rounded-lg shadow-lg">
+        <ReactPlayer url={`https://www.youtube.com/watch?v=MH5t1lFhbVQ`} />
+      </div>
+    </div>
+  );
+}
+
 const Education = () => {
   return (
     <div className="bg-accent">
       <NavBar />
       <div className="flex flex-col w-full items-center justify-center">
         <CovidBanner />
+        <Separator />
+        <CovidEduVideo />
         <Separator />
         <CovidSymptom />
         <Separator />
