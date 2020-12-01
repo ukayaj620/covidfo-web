@@ -36,6 +36,8 @@ const image = (name) => {
       return require('../assets/icons/github.svg');
     case 'instagram':
       return require('../assets/icons/instagram.svg');
+    case 'refresh':
+      return require('../assets/icons/refresh.svg');
     default:
       return require('../assets/icons/covidfo-icon.svg');
   }
