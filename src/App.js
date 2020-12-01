@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Helmet } from "react-helmet";
 import Home from './pages/Home';
+import News from './pages/News';
 import Education from './pages/Education';
 import SpreadMap from './pages/SpreadMap';
 
@@ -16,6 +17,7 @@ const App = () => {
           <Route exact path="/" component={Home} />
           <Route path="/edu" component={Education} />
           <Route path="/map" component={SpreadMap} />
+          <Route path="/news" component={News} />
         </Switch>
       </BrowserRouter>
     </div>
