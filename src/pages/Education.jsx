@@ -15,7 +15,7 @@ const CovidBanner = () => {
           src={load('covid19')} 
           alt="Coronavirus Disease 2019" 
         />
-        <div className="flex flex-col w-full items-center lg:items-start lg:w-2/3 ml-8  ">
+        <div className="flex flex-col w-full items-center lg:items-start lg:w-2/3 lg:ml-8">
           <h2 className="dark text-center">Apa itu COVID-19?</h2>
           <h5 className="w-full my-4 text-center lg:text-justify">
             Coronavirus disease 2019 (COVID-19) adalah sebuah penyakit infeksius yang disebabkan oleh 
