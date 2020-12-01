@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className="w-full flex flex-col lg:flex-row justify-around items-center bg-footer px-8 py-6">
       <div className="w-full lg:w-1/2 flex flex-col">
-        <h6 className="font-header text-base lg:text-lg text-justify font-bold">Develop by Jayaku Briliantio</h6>
+        <h6 className="font-header text-base lg:text-lg text-justify font-bold">Developed by Jayaku Briliantio</h6>
         <div className="w-full lg:w-1/2 flex flex-row justify-left mt-4">
           {socialMediaLink.map(({ name, alt, link }, index) => (
             <a className="mr-4" href={link} alt={name}>
