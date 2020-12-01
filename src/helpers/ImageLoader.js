@@ -38,6 +38,8 @@ const image = (name) => {
       return require('../assets/icons/instagram.svg');
     case 'refresh':
       return require('../assets/icons/refresh.svg');
+    case 'facebook':
+      return require('../assets/icons/facebook.svg');
     default:
       return require('../assets/icons/covidfo-icon.svg');
   }
