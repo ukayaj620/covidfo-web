@@ -98,17 +98,19 @@ const HomeWorldCases = ({ worldData }) => {
 };
 
 const HomeNewsCases = ({ newsData }) => {
+  console.log(newsData);
   return (
     <div className="w-full flex flex-col items-center px-4 justify-center">
       <h2 className="dark text-center">Berita COVID-19 Indonesia Terkini</h2>
       <div className="w-full flex flex-col lg:flex-row items-center mt-8">
-        {newsData.filter(news => news.urlToImage).slice(0, 4).map((news, index) => (
-          <NewsCard 
-            urlToImage={news.urlToImage}
-            source={news.source.name}
-            title={news.title}
-            url={news.url}
-            publishedAt={(new Date(news.publishedAt)).toLocaleString()}
+        {newsData.slice(0, 4).map(({ title, pubDate, link, enclosure }, index) => (
+          <NewsCard
+            key={`#key-${title}-${index}`}
+            urlToImage={enclosure[0].$.url}
+            source={`Satgas Covid-19 Indonesia`}
+            title={title[0]}
+            url={link[0]}
+            publishedAt={pubDate[0]}
           />
         ))}
       </div>
@@ -127,7 +129,7 @@ const Home = () => {
       const responseWorldData = await World.getWorldBasicInfo();
       const responseNewsData = await News.getLatestHealthInfo();
       _setWorldData(responseWorldData.data); 
-      _setNewsData(responseNewsData.data.articles);
+      _setNewsData(responseNewsData);
     }
     bootstrapAsync().then(() => _setIsLoading(false));
   }, []);
