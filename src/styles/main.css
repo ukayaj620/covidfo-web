@@ -109,7 +109,7 @@ h6 {
 }
 
 .news-cards {
-  @apply w-4/5 flex flex-col justify-between items-center m-4 rounded-xl shadow-xl transform transition duration-300 bg-white;
+  @apply flex flex-col justify-between items-center m-4 rounded-xl shadow-xl transform transition duration-300 bg-white;
 }
 
 .news-cards:hover {
@@ -119,10 +119,6 @@ h6 {
 @screen lg {
   .covid-cards {
     @apply w-1/4
-  }
-
-  .news-cards {
-    @apply w-1/4;
   }
 }
 
