@@ -98,7 +98,6 @@ const HomeWorldCases = ({ worldData }) => {
 };
 
 const HomeNewsCases = ({ newsData }) => {
-  console.log(newsData);
   return (
     <div className="w-full flex flex-col items-center px-4 justify-center">
       <h2 className="dark text-center">Berita COVID-19 Indonesia Terkini</h2>
