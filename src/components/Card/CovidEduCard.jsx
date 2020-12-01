@@ -3,7 +3,7 @@ import load from '../../helpers/ImageLoader';
 
 const CovidEduCard = ({ image, description, title }) => {
   return (
-    <div className="flex flex-col lg:flex-row justify-between items-center w-full lg:w-1/2 px-6 my-2">
+    <div className="flex flex-col lg:flex-row justify-between items-center w-full lg:w-1/2 lg:px-6 my-2">
       <div className="flex w-48 lg:w-2/5 p-4">
         <img 
           className="rounded-full w-40 h-40 shadow-md"
