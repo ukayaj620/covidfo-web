@@ -118,6 +118,15 @@ const HomeNewsCases = ({ newsData, onRefresh }) => {
           alt={'click to refresh page'}
         />
       </div>
+      <h4 className="dark text-center">
+        Source:{' '}
+        <a 
+          href="https://covid19.go.id/p/berita"
+          className="hover:underline hover:text-primary"
+        >
+          Satgas COVID-19 Indonesia
+        </a>
+      </h4>
       <div className="w-full flex flex-col lg:flex-row items-center mt-8">
         {newsData.slice(0, 4).map(({ title, pubDate, link, enclosure }, index) => (
           <div className="flex flex-wrap w-4/5 lg:w-1/4">

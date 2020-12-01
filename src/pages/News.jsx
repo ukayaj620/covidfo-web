@@ -33,6 +33,15 @@ const News = () => {
     <div className={`bg-accent ${_class}`}>
       <NavBar />
       <h2 className="dark text-center">Berita COVID-19 Indonesia Selengkapnya</h2>
+      <h4 className="dark text-center">
+        Source:{' '}
+        <a 
+          href="https://covid19.go.id/p/berita"
+          className="hover:underline hover:text-primary"
+        >
+          Satgas COVID-19 Indonesia
+        </a>
+      </h4>
       <div className="flex flex-col lg:flex-wrap lg:flex-row w-full items-center justify-center my-8 lg:px-4">
         {_newsData.map(({ title, pubDate, link, enclosure }, index) => (
           <div className="flex flex-wrap w-4/5 lg:w-1/4">
