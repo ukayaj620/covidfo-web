@@ -201,7 +201,7 @@ const Home = () => {
       </div>
       <Footer />
     </div>
-  ) : <Loading />;
+  ) : <Loading type="Circles" />;
 };
 
 export default Home;

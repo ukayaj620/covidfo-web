@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import * as NewsAPI from '../api/news.api';
 import NewsCard from '../components/Card/NewsCard';
 import Footer from '../components/Footer';
+import Loading from '../components/Loading';
 import NavBar from '../components/NavBar';
 
 const News = () => {
@@ -28,9 +29,10 @@ const News = () => {
     return () => clearTimeout(timer);
   }, [_isLoading]);
 
-  return (
+  return !_isLoading ? (
     <div className={`bg-accent ${_class}`}>
       <NavBar />
+      <h2 className="dark text-center">Berita COVID-19 Indonesia Selengkapnya</h2>
       <div className="flex flex-col lg:flex-wrap lg:flex-row w-full items-center justify-center my-8 px-4">
         {_newsData.map(({ title, pubDate, link, enclosure }, index) => (
           <div className="flex flex-wrap w-1/4">
@@ -47,7 +49,7 @@ const News = () => {
       </div>
       <Footer />
     </div>
-  );
+  ) : <Loading type="Bars" />;
 };
 
 export default News;
