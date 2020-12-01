@@ -1,6 +1,10 @@
 # Covidfo - Website
 Covidfo Website for Real Time Information of COVID-19
 
+Build using React.js
+
+Build Status: [![Netlify Status](https://api.netlify.com/api/v1/badges/1bb22418-2809-4384-9033-349bd717b764/deploy-status)](https://app.netlify.com/sites/covidfo/deploys)
+
 ```
 Copyright 2020 Jayaku Briliantio
 
