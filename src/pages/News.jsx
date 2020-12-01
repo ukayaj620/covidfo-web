@@ -33,9 +33,9 @@ const News = () => {
     <div className={`bg-accent ${_class}`}>
       <NavBar />
       <h2 className="dark text-center">Berita COVID-19 Indonesia Selengkapnya</h2>
-      <div className="flex flex-col lg:flex-wrap lg:flex-row w-full items-center justify-center my-8 px-4">
+      <div className="flex flex-col lg:flex-wrap lg:flex-row w-full items-center justify-center my-8 lg:px-4">
         {_newsData.map(({ title, pubDate, link, enclosure }, index) => (
-          <div className="flex flex-wrap w-1/4">
+          <div className="flex flex-wrap w-4/5 lg:w-1/4">
             <NewsCard
               key={`#key-${title}-${index}`}
               urlToImage={enclosure[0].$.url}
