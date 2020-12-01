@@ -42,18 +42,23 @@ const Footer = () => {
 const socialMediaLink = [
   {
     name: 'github',
-    alt: 'Jayaku Briliantio GitHub',
+    alt: 'Jayaku Briliantio\'s GitHub',
     link: 'https://github.com/ukayaj620/'
   },
   {
     name: 'instagram',
-    alt: 'Jayaku Briliantio Instagram',
+    alt: 'Jayaku Briliantio\'s Instagram',
     link: 'https://www.instagram.com/jayakubriliantio/'
   },
   {
     name: 'facebook',
-    alt: 'Jayaku Briliantio Facebook',
+    alt: 'Jayaku Briliantio\'s Facebook',
     link: 'https://www.facebook.com/jayaku.briliantio/'
+  },
+  {
+    name: 'linkedin',
+    alt: 'Jayaku Briliantio\'s Linkedin',
+    link: 'https://www.linkedin.com/in/neartojayakubriliantio/'
   }
 ]
 
