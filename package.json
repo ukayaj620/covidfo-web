@@ -17,7 +17,8 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.0",
     "tailwindcss": "^1.9.6",
-    "web-vitals": "^0.2.4"
+    "web-vitals": "^0.2.4",
+    "xml2js": "^0.4.23"
   },
   "scripts": {
     "start": "npm run watch:css && react-scripts start",
