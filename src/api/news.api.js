@@ -6,13 +6,13 @@ export const getLatestHealthInfo = async () => {
     const response = await axios.get(
       `https://cors-anywhere.herokuapp.com/https://covid19.go.id/feed/berita`,
       {
-        headers: new Headers({
+        headers: {
           Accept: "text/html",
           "content-type": "application/x-www-form-urlencoded",
           "Access-Control-Allow-Origin": "*",
           "Access-Control-Allow-Methods": "GET, POST, PUT",
           "Access-Control-Allow-Headers": "Content-Type",
-        }),
+        },
         mode: "no-cors",
       });
 
