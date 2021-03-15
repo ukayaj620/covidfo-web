@@ -17,7 +17,7 @@ const App = () => {
           <Route exact path="/" component={Home} />
           <Route path="/edu" component={Education} />
           <Route path="/map" component={SpreadMap} />
-          <Route path="/news" component={News} />
+          {/* <Route path="/news" component={News} /> */}
         </Switch>
       </BrowserRouter>
     </div>

@@ -8,7 +8,7 @@ import Loading from '../components/Loading';
 import CovidCard from '../components/Card/CovidCard';
 import { parseNumber } from '../helpers/Functions';
 import Separator from '../components/Separator';
-import NewsCard from '../components/Card/NewsCard';
+// import NewsCard from '../components/Card/NewsCard';
 import Footer from '../components/Footer';
 
 const HomeBanner = () => {
@@ -102,53 +102,53 @@ const HomeWorldCases = ({ worldData, onRefresh }) => {
   );
 };
 
-const HomeNewsCases = ({ newsData, onRefresh }) => {
-  const _history = useHistory();
+// const HomeNewsCases = ({ newsData, onRefresh }) => {
+//   const _history = useHistory();
 
-  const _navigateTo = (path) => _history.push(path);
+//   const _navigateTo = (path) => _history.push(path);
 
-  return (
-    <div className="w-full flex flex-col items-center px-4 justify-center">
-      <div className="w-full flex flex-col lg:flex-row items-center justify-center">
-        <h2 className="dark text-center">Berita COVID-19 Indonesia Terkini</h2>
-        <img
-          onClick={onRefresh}
-          src={load('refresh')} 
-          className="w-10 ml-0 lg:ml-4 bg-white rounded-full shadow-lg p-2 my-2 lg:my-0"
-          alt={'click to refresh page'}
-        />
-      </div>
-      <h4 className="dark text-center">
-        Source:{' '}
-        <a 
-          href="https://covid19.go.id/p/berita"
-          className="hover:underline hover:text-primary"
-        >
-          Satgas COVID-19 Indonesia
-        </a>
-      </h4>
-      <div className="w-full flex flex-col lg:flex-row items-center mt-8">
-        {newsData.slice(0, 4).map(({ title, pubDate, link, enclosure }, index) => (
-          <div className="flex flex-wrap w-4/5 lg:w-1/4">
-            <NewsCard
-              key={`#key-${title}-${index}`}
-              urlToImage={enclosure[0].$.url}
-              source={`Satgas Covid-19 Indonesia`}
-              title={title[0]}
-              url={link[0]}
-              publishedAt={pubDate[0]}
-            />
-          </div>
-        ))}
-      </div>
-      <div className="w-full flex flex-col lg:flex-row items-center justify-center mt-4">
-        <button className="btn" onClick={ () => _navigateTo('/news') }>
-          <h4>Baca Lebih Lanjut</h4>
-        </button>
-      </div>
-    </div>
-  );
-};
+//   return (
+//     <div className="w-full flex flex-col items-center px-4 justify-center">
+//       <div className="w-full flex flex-col lg:flex-row items-center justify-center">
+//         <h2 className="dark text-center">Berita COVID-19 Indonesia Terkini</h2>
+//         <img
+//           onClick={onRefresh}
+//           src={load('refresh')} 
+//           className="w-10 ml-0 lg:ml-4 bg-white rounded-full shadow-lg p-2 my-2 lg:my-0"
+//           alt={'click to refresh page'}
+//         />
+//       </div>
+//       <h4 className="dark text-center">
+//         Source:{' '}
+//         <a 
+//           href="https://covid19.go.id/p/berita"
+//           className="hover:underline hover:text-primary"
+//         >
+//           Satgas COVID-19 Indonesia
+//         </a>
+//       </h4>
+//       <div className="w-full flex flex-col lg:flex-row items-center mt-8">
+//         {newsData.slice(0, 4).map(({ title, pubDate, link, enclosure }, index) => (
+//           <div className="flex flex-wrap w-4/5 lg:w-1/4">
+//             <NewsCard
+//               key={`#key-${title}-${index}`}
+//               urlToImage={enclosure[0].$.url}
+//               source={`Satgas Covid-19 Indonesia`}
+//               title={title[0]}
+//               url={link[0]}
+//               publishedAt={pubDate[0]}
+//             />
+//           </div>
+//         ))}
+//       </div>
+//       <div className="w-full flex flex-col lg:flex-row items-center justify-center mt-4">
+//         <button className="btn" onClick={ () => _navigateTo('/news') }>
+//           <h4>Baca Lebih Lanjut</h4>
+//         </button>
+//       </div>
+//     </div>
+//   );
+// };
 
 const Home = () => {
   const [_isLoading, _setIsLoading] = useState(true);
@@ -163,10 +163,10 @@ const Home = () => {
     _setIsLoading(true);
   }
 
-  const _onRefreshNews = () => {
-    _setRefreshNews(true);
-    _setIsLoading(true);
-  }
+  // const _onRefreshNews = () => {
+  //   _setRefreshNews(true);
+  //   _setIsLoading(true);
+  // }
 
   useEffect(() => {
     const bootstrapAsync = async () => {
@@ -205,8 +205,8 @@ const Home = () => {
         <Separator />
         <HomeWorldCases worldData={_worldData} onRefresh={_onRefreshCases} />
         <Separator />
-        <HomeNewsCases newsData={_newsData} onRefresh={_onRefreshNews} />
-        <Separator />
+        {/* <HomeNewsCases newsData={_newsData} onRefresh={_onRefreshNews} />
+        <Separator /> */}
       </div>
       <Footer />
     </div>

@@ -102,10 +102,6 @@ const menuItemsLabel = [
     path: '/map',
   },
   {
-    label: 'News',
-    path: '/news'
-  },
-  {
     label: 'Edukasi',
     path: '/edu'
   },
