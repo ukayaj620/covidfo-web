@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Helmet } from "react-helmet";
 import Home from './pages/Home';
-import News from './pages/News';
+// import News from './pages/News';
 import Education from './pages/Education';
 import SpreadMap from './pages/SpreadMap';
 

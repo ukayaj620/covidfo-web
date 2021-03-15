@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import * as WorldAPI from '../api/worlds.api';
-import * as NewsAPI from '../api/news.api';
+// import * as NewsAPI from '../api/news.api';
 import load from '../helpers/ImageLoader';
 import NavBar from '../components/NavBar';
 import Loading from '../components/Loading';
@@ -152,10 +152,10 @@ const HomeWorldCases = ({ worldData, onRefresh }) => {
 
 const Home = () => {
   const [_isLoading, _setIsLoading] = useState(true);
-  const [_refreshNews, _setRefreshNews] = useState(false);
+  // const [_refreshNews, _setRefreshNews] = useState(false);
   const [_refreshCases, _setRefreshCases] = useState(false);
   const [_worldData, _setWorldData] = useState({});
-  const [_newsData, _setNewsData] = useState([]);
+  // const [_newsData, _setNewsData] = useState([]);
   const [_class, _setClass] = useState('opacity-0');
 
   const _onRefreshCases = () => {
@@ -179,16 +179,16 @@ const Home = () => {
     });
   }, [_refreshCases]);
 
-  useEffect(() => {
-    const bootstrapAsync = async () => {
-      const responseNewsData = await NewsAPI.getLatestHealthInfo();
-      _setNewsData(responseNewsData);
-    }
-    bootstrapAsync().then(() => {
-      _setIsLoading(false);
-      _setRefreshNews(false);
-    });
-  }, [_refreshNews]);
+  // useEffect(() => {
+  //   const bootstrapAsync = async () => {
+  //     const responseNewsData = await NewsAPI.getLatestHealthInfo();
+  //     _setNewsData(responseNewsData);
+  //   }
+  //   bootstrapAsync().then(() => {
+  //     _setIsLoading(false);
+  //     _setRefreshNews(false);
+  //   });
+  // }, [_refreshNews]);
 
   useEffect(() => {
     const timer = setTimeout(() => {
